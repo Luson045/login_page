@@ -5,12 +5,11 @@ var express=require("express");
 var bodyParser=require("body-parser");
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb+srv://lusonbasumatary2:ce3r2xW0Tr9cYAP3@cluster0.lwfj52c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+mongoose.connect("<url>");
 var db=mongoose.connection;
 db.on('error', console.log.bind(console, "connection error"));
 const { MongoClient } = require("mongodb");
-// Replace the uri string with your connection string.
-const uri ="mongodb+srv://lusonbasumatary2:ce3r2xW0Tr9cYAP3@cluster0.lwfj52c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri ="<url>";
 const client = new MongoClient(uri);
 db.once('open', function(callback){
 	console.log("connection succeeded");
